@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моделювання кінематики</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Моделювання кінематики</h1>
+        </header>
+
+        <section class="inputs">
+            <div class="card">
+                <div class="input-group">
+                    <label>x₀ (м):</label>
+                    <input type="number" id="x0" value="0">
+                </div>
+                <div class="input-group">
+                    <label>v₀ (м/с):</label>
+                    <input type="number" id="v0" value="10">
+                </div>
+                <div class="input-group">
+                    <label>a (м/с²):</label>
+                    <input type="number" id="acc" value="-2">
+                </div>
+                <div class="input-group">
+                    <label>t_max (с):</label>
+                    <input type="number" id="tmax" value="10">
+                </div>
+            </div>
+        </section>
+
+        <section class="visual">
+            <div class="axis">
+                <div id="point" class="point"></div>
+            </div>
+            <div class="axis-labels">
+                <span>-X</span><span>Напрям руху</span><span>+X</span>
+            </div>
+        </section>
+
+        <section class="chart-area">
+            <canvas id="motionChart"></canvas>
+        </section>
+
+        <section class="results">
+            <div class="res-item">t: <span id="time">0.0</span> с</div>
+            <div class="res-item">x: <span id="dist">0.00</span> м</div>
+        </section>
+
+        <footer class="btns">
+            <button onclick="start()" class="btn btn-go">Старт</button>
+            <button onclick="stop()" class="btn btn-stop">Пауза</button>
+            <button onclick="reset()" class="btn btn-reset">Скидання</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
