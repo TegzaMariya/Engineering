@@ -46,7 +46,7 @@ async function startSimulation() {
             const cell = document.getElementById(`cell-${i}-${j}`);
             if (cell) cell.style.backgroundColor = "#fff7ed"; 
             
-            await sleep(500);
+            await sleep(50);
 
             if (w[i-1] <= j) {
                 dp[i][j] = Math.max(dp[i-1][j], v[i-1] + dp[i-1][j - w[i-1]]);

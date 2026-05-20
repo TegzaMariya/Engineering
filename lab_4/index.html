@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналітичний комплекс: Інтерполяція та Апроксимація</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Аналітичний комплекс дослідження чисельних методів</h1>
+    </header>
+
+    <div id="tooltip"></div>
+
+    <div class="workspace">
+        <div class="sidebar">
+            <div class="control-group">
+                <label for="dataSet">Обсяг вибірки точок</label>
+                <select id="dataSet">
+                    <option value="5">5 точок (Варіант 29)</option>
+                    <option value="10">10 точок (Середня вибірка)</option>
+                    <option value="20">20 точок (Стрес-тест)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="mode">Режим головного графіка</label>
+                <select id="mode">
+                    <option value="all">Показати усе (Лагранж + МНК)</option>
+                    <option value="lagrange">Тільки поліном Лагранжа</option>
+                    <option value="lsm">Тільки парабола МНК</option>
+                </select>
+            </div>
+
+            <hr class="separator">
+
+            <label>Редагування координат вузлів</label>
+            <div class="points-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pointsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="canvas-card">
+                <h3>Головний графік апроксимації <span class="canvas-badge">Полотно 1</span></h3>
+                <canvas id="mainCanvas" width="850" height="380"></canvas>
+            </div>
+
+            <div class="canvas-card">
+                <h3>Діаграма відхилень (Залишки rᵢ) <span class="canvas-badge">Полотно 2</span></h3>
+                <canvas id="resCanvas" width="850" height="280"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
